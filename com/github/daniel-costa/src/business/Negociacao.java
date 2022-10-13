@@ -7,13 +7,16 @@ public class Negociacao {
     private TipoDeMovimentacao tipoDeMovimentacao;
     private TipoDeMercado tipoDeMercado;
     private LocalDate dataDeVencimento;
-    private Corretora corretora;
+    private String corretora;
     private String codigoDeNegociacao;
     private int quantidadeNegociada;
     private double precoNegociado;
     private double valorTotalNegociado;
 
     public Negociacao() {
+    }
+
+    public Negociacao(String codigo) {
     }
 
     public Negociacao(TipoDeMovimentacao tipoDeMovimentacao, String codigoDeNogociacao) {
@@ -31,7 +34,7 @@ public class Negociacao {
     }
 
     public Negociacao(LocalDate dataDoNegocio, TipoDeMovimentacao tipoDeMovimentacao, TipoDeMercado tipoDeMercado,
-            LocalDate dataDeVencimento, Corretora corretora, String codigoDeNegociacao, int quantidadeNegociada,
+            LocalDate dataDeVencimento, String corretora, String codigoDeNegociacao, int quantidadeNegociada,
             double precoNegociado, double valorTotalNegociado) {
         this.dataDoNegocio = dataDoNegocio;
         this.tipoDeMovimentacao = tipoDeMovimentacao;
@@ -76,11 +79,11 @@ public class Negociacao {
         this.dataDeVencimento = dataDeVencimento;
     }
 
-    public Corretora getCorretora() {
+    public String getCorretora() {
         return corretora;
     }
 
-    public void setCorretora(Corretora corretora) {
+    public void setCorretora(String corretora) {
         this.corretora = corretora;
     }
 

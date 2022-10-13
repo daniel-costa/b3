@@ -1,42 +1,50 @@
 package business;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public interface NegociacaoRepository {
 
     /**
-     * Fornece a negociação média pelo código do ativo fornecido.
+     * Fornece todas as negociações.
      * 
-     * @param codigo Código do ativo desejado.
-     * @return Negociação média do ativo desejado.
+     * @return retorna uma lista com todas as negociações ou {@code}NULL
+     *         caso não tenha nenhuma.
      */
-    public NegociacaoMedia negociacaoMedia(String codigo);
+    public ArrayList<Negociacao> todas();
 
     /**
-     * Fornece a negociação média de compra ou venda do ativo fornecido.
+     * Fornece as negociações de acordo com o tipo desejado.
      * 
-     * @param codigo             Código do ativo fornecido.
      * @param tipoDeMovimentacao Tipo de movimentação, compra ou venda.
-     * @return Retorna a negociação média de compra ou venda do ativo desejado.
+     * @return Retorna uma lista com as negociações do tipo fornecido.
      */
-    public NegociacaoMedia negociacaoMedia(String codigo, TipoDeMovimentacao tipoDeMovimentacao);
+    public ArrayList<Negociacao> porTipoDeMovimentacao(TipoDeMovimentacao tipoDeMovimentacao);
 
     /**
-     * Calcula o preço médio dos ativos comprados para o código
-     * fornecido.
+     * Fornece as negociações realizadas no periodo fornecido.
      * 
-     * @param codigo Código do ativo desejado.
-     * @return Retorna o preço médio de compra do ativo fornecido.
+     * @param inicioDoPeriodo  Data que marca o período desejado.
+     * @param terminoDoPeriodo Data que marca o termino do período desejado.
+     * @return Retorna uma lista com as negociações dentro do período
+     *         delimitado.
      */
-    public double precoMedio(String codigo);
+    public ArrayList<Negociacao> entreOPeriodo(LocalDate inicioDoPeriodo, LocalDate terminoDoPeriodo);
 
     /**
-     * Calcula o total investido em um determidado ativo.
+     * Fornece as negociações realizadas por um determinado ativo.
      * 
-     * @param codigo Código do ativo desejado.
-     * @return Retorna o valor investido em um determinado ativo.
+     * @param codigo Código que identifica um ativo na bolsa de valores.
+     * @return Retorna uma lista que contem as negociações do ativo fornecido.
      */
-    public double totalInvestidoEmCadaAtivo(String codigo);
+    public ArrayList<Negociacao> porCodigo(String codigo);
+
+    /**
+     * Fornece uma lista de todos os ativos negociados.
+     * 
+     * @return Lista de ativos negociados.
+     */
+    public ArrayList<String> ativosNegociados();
 
     /**
      * Calcula o total investido.
@@ -46,9 +54,11 @@ public interface NegociacaoRepository {
     public double totalInvestido();
 
     /**
-     * Fornece uma lista de todos os ativos negociados.
+     * Calcula o total investido em um determidado ativo.
      * 
-     * @return Lista de ativos negociados.
+     * @param codigo Código do ativo desejado.
+     * @return Retorna o valor investido em um determinado ativo.
      */
-    public ArrayList<String> ativosNegociados();
+    public double totalInvestido(String codigo);
+
 }

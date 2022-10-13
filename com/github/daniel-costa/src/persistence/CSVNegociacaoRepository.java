@@ -3,47 +3,47 @@ package persistence;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-import business.NegociacaoMedia;
+import business.Negociacao;
 import business.NegociacaoRepository;
+import business.TipoDeMercado;
 import business.TipoDeMovimentacao;
 
 public class CSVNegociacaoRepository implements NegociacaoRepository {
-    String pathNegociacoes = "C:\\Users\\danie\\Documents\\metricasInvestimentos\\com\\github\\daniel-costa\\metricasInvestimentos";
+    // FIXME System.getenv
+    String pathNegociacoes = "C:\\Users\\danie\\Documents\\metricasInvestimentos\\com\\github\\daniel-costa\\src\\resources\\base\\negociacoes.csv";
 
     @Override
-    public NegociacaoMedia negociacaoMedia(String codigo) {
-
-        return null;
-    }
-
-    @Override
-    public NegociacaoMedia negociacaoMedia(String codigo, TipoDeMovimentacao tipoDeMovimentacao) {
+    public ArrayList<Negociacao> todas() {
         try {
             FileReader fr = new FileReader(pathNegociacoes);
             try (BufferedReader bf = new BufferedReader(fr)) {
-                NegociacaoMedia negociacaoMedia = new NegociacaoMedia(tipoDeMovimentacao, codigo);
+                ArrayList<Negociacao> negociacoes = new ArrayList<>();
 
                 String linha;
                 String[] campos = new String[9];
 
                 while ((linha = bf.readLine()) != null) {
                     campos = linha.split(",");
-                    TipoDeMovimentacao tipo = TipoDeMovimentacao.valueOf(campos[1].toUpperCase());
-                    if (tipoDeMovimentacao == tipo && campos[5].equals(codigo)) {
+                    LocalDate dataDoNegocio = LocalDate.parse(campos[0]);
+                    TipoDeMovimentacao tipoDeMovimentacao = TipoDeMovimentacao
+                            .valueOf(campos[1].toUpperCase());
+                    TipoDeMercado tipoDeMercado = TipoDeMercado
+                            .valueOf(campos[2].toUpperCase());
+                    LocalDate dataDeVencimento = LocalDate.parse(campos[3]);
+                    String corretora = campos[4];
+                    String codigoDeNegociacao = campos[5];
+                    int quantidadeNegociada = Integer.parseInt(campos[6]);
+                    double precoNegociado = Double.parseDouble(campos[7]);
+                    double valorTotalNegociado = Double.parseDouble(campos[8]);
 
-                        negociacaoMedia.setQuantidadeNegociada(
-                                Integer.parseInt(campos[6]) + negociacaoMedia.getQuantidadeNegociada());
-                        negociacaoMedia.setValorTotalNegociado(
-                                Integer.parseInt(campos[8] + negociacaoMedia.getValorTotalNegociado()));
-                    }
+                    negociacoes.add(new Negociacao(dataDoNegocio, tipoDeMovimentacao,
+                            tipoDeMercado, dataDeVencimento, corretora, codigoDeNegociacao,
+                            quantidadeNegociada, precoNegociado, valorTotalNegociado));
                 }
-
-                negociacaoMedia.setPrecoNegociado(
-                        negociacaoMedia.getValorTotalNegociado() / negociacaoMedia.getQuantidadeNegociada());
-
-                return negociacaoMedia;
+                return negociacoes;
             }
         } catch (IOException e) {
             System.out.println("Nenhum arquivo encontrado");
@@ -54,46 +54,83 @@ public class CSVNegociacaoRepository implements NegociacaoRepository {
 
     @Override
     public ArrayList<String> ativosNegociados() {
-        try {
-            FileReader fr = new FileReader(pathNegociacoes);
-            try (BufferedReader bf = new BufferedReader(fr)) {
-                ArrayList<String> listaDeAtivos = new ArrayList<>();
+        NegociacaoRepository repoNegociacao = new CSVNegociacaoRepository();
+        ArrayList<Negociacao> negociacoes = repoNegociacao.todas();
 
-                String linha;
-                String[] campos = new String[9];
+        ArrayList<String> ativosNegociados = new ArrayList<>();
 
-                while ((linha = bf.readLine()) != null) {
-                    campos = linha.split(",");
-                    if (!listaDeAtivos.contains(campos[5])) {
-                        listaDeAtivos.add(campos[5]);
-                    }
-                }
-
-                return listaDeAtivos;
+        for (Negociacao negociacao : negociacoes) {
+            if (!ativosNegociados.contains(negociacao.getCodigoDeNegociacao())) {
+                ativosNegociados.add(negociacao.getCodigoDeNegociacao());
             }
-        } catch (IOException e) {
-            System.out.println("Nenhum arquivo encontrado");
-
         }
-        return null;
+
+        return ativosNegociados;
     }
 
     @Override
-    public double precoMedio(String codigo) {
-        // TODO
-        return 0.0;
+    public ArrayList<Negociacao> porCodigo(String codigo) {
+        NegociacaoRepository repoNegociacao = new CSVNegociacaoRepository();
+        ArrayList<Negociacao> negociacoes = repoNegociacao.todas();
+
+        ArrayList<Negociacao> negociacoesDeUmAtivo = new ArrayList<>();
+
+        for (Negociacao negociacao : negociacoes) {
+            if (negociacao.getCodigoDeNegociacao().equals(codigo)) {
+                negociacoesDeUmAtivo.add(negociacao);
+            }
+        }
+
+        return negociacoesDeUmAtivo;
+    }
+
+    @Override
+    public ArrayList<Negociacao> porTipoDeMovimentacao(TipoDeMovimentacao tipoDeMovimentacao) {
+        NegociacaoRepository repoNegociacao = new CSVNegociacaoRepository();
+        ArrayList<Negociacao> negociacoes = repoNegociacao.todas();
+
+        ArrayList<Negociacao> negociacoesDeUmTipoDeMovimentacao = new ArrayList<>();
+
+        for (Negociacao negociacao : negociacoes) {
+            if (negociacao.getTipoDeMovimentacao().equals(tipoDeMovimentacao)) {
+                negociacoesDeUmTipoDeMovimentacao.add(negociacao);
+            }
+        }
+
+        return negociacoesDeUmTipoDeMovimentacao;
     }
 
     @Override
     public double totalInvestido() {
-        // TODO Auto-generated method stub
-        return 0;
+        NegociacaoRepository repoNegociacao = new CSVNegociacaoRepository();
+        ArrayList<Negociacao> negociacoes = repoNegociacao.todas();
+
+        double total = 0.0;
+        for (Negociacao negociacao : negociacoes) {
+            total += negociacao.getValorTotalNegociado();
+        }
+
+        return total;
     }
 
     @Override
-    public double totalInvestidoEmCadaAtivo(String codigo) {
-        // TODO Auto-generated method stub
-        return 0;
+    public double totalInvestido(String codigo) {
+        NegociacaoRepository repoNegociacao = new CSVNegociacaoRepository();
+        ArrayList<Negociacao> negociacoes = repoNegociacao.todas();
+
+        double total = 0.0;
+        for (Negociacao negociacao : negociacoes) {
+            if (negociacao.getCodigoDeNegociacao().equals(codigo)) {
+                total += negociacao.getValorTotalNegociado();
+            }
+        }
+
+        return total;
     }
 
+    @Override
+    public ArrayList<Negociacao> entreOPeriodo(LocalDate inicioDoPeriodo, LocalDate terminoDoPeriodo) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

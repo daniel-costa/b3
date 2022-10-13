@@ -8,6 +8,10 @@ public class NegociacaoMedia extends Negociacao {
     public NegociacaoMedia() {
     }
 
+    public NegociacaoMedia(String codigo) {
+        super(codigo);
+    }
+
     public NegociacaoMedia(TipoDeMovimentacao tipoDeMovimentacao, String codigoDeNogociacao) {
         super(tipoDeMovimentacao, codigoDeNogociacao);
     }
