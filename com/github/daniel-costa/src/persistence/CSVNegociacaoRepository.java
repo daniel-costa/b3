@@ -4,12 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
-import business.Negociacao;
-import business.NegociacaoRepository;
-import business.TipoDeMercado;
-import business.TipoDeMovimentacao;
+import business.negocio.Negociacao;
+import business.negocio.NegociacaoRepository;
+import business.negocio.TipoDeMovimentacao;
 
 public class CSVNegociacaoRepository implements NegociacaoRepository {
     // FIXME System.getenv
@@ -27,12 +28,17 @@ public class CSVNegociacaoRepository implements NegociacaoRepository {
 
                 while ((linha = bf.readLine()) != null) {
                     campos = linha.split(",");
-                    LocalDate dataDoNegocio = LocalDate.parse(campos[0]);
+                    LocalDate dataDoNegocio = LocalDate.parse(campos[0], DateTimeFormatter.ofPattern("dd/MM/yyy"));
                     TipoDeMovimentacao tipoDeMovimentacao = TipoDeMovimentacao
                             .valueOf(campos[1].toUpperCase());
-                    TipoDeMercado tipoDeMercado = TipoDeMercado
-                            .valueOf(campos[2].toUpperCase());
-                    LocalDate dataDeVencimento = LocalDate.parse(campos[3]);
+                    String tipoDeMercado = campos[2];
+                    LocalDate dataDeVencimento;
+                    try {
+                        dataDeVencimento = LocalDate.parse(campos[3], DateTimeFormatter.ofPattern("dd/MM/yyy"));
+                    } catch (DateTimeParseException e) {
+                        dataDeVencimento = dataDoNegocio.plusDays(3);
+                    }
+
                     String corretora = campos[4];
                     String codigoDeNegociacao = campos[5];
                     int quantidadeNegociada = Integer.parseInt(campos[6]);

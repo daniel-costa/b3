@@ -1,11 +1,11 @@
-package business;
+package business.negocio;
 
 import java.time.LocalDate;
 
 public class Negociacao {
     private LocalDate dataDoNegocio;
     private TipoDeMovimentacao tipoDeMovimentacao;
-    private TipoDeMercado tipoDeMercado;
+    private String tipoDeMercado;
     private LocalDate dataDeVencimento;
     private String corretora;
     private String codigoDeNegociacao;
@@ -33,7 +33,7 @@ public class Negociacao {
         this.valorTotalNegociado = valorTotalNegociado;
     }
 
-    public Negociacao(LocalDate dataDoNegocio, TipoDeMovimentacao tipoDeMovimentacao, TipoDeMercado tipoDeMercado,
+    public Negociacao(LocalDate dataDoNegocio, TipoDeMovimentacao tipoDeMovimentacao, String tipoDeMercado,
             LocalDate dataDeVencimento, String corretora, String codigoDeNegociacao, int quantidadeNegociada,
             double precoNegociado, double valorTotalNegociado) {
         this.dataDoNegocio = dataDoNegocio;
@@ -63,11 +63,11 @@ public class Negociacao {
         this.tipoDeMovimentacao = tipoDeMovimentacao;
     }
 
-    public TipoDeMercado getTipoDeMercado() {
+    public String getTipoDeMercado() {
         return tipoDeMercado;
     }
 
-    public void setTipoDeMercado(TipoDeMercado tipoDeMercado) {
+    public void setTipoDeMercado(String tipoDeMercado) {
         this.tipoDeMercado = tipoDeMercado;
     }
 

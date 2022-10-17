@@ -1,4 +1,4 @@
-package business;
+package business.negocio;
 
 import java.util.ArrayList;
 

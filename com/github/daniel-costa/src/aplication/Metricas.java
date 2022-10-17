@@ -2,18 +2,18 @@ package aplication;
 
 import java.util.ArrayList;
 
-import business.IMetricas;
-import business.Negociacao;
-import business.NegociacaoMedia;
-import business.NegociacaoRepository;
-import business.TipoDeMovimentacao;
+import business.negocio.IMetricas;
+import business.negocio.Negociacao;
+import business.negocio.NegociacaoMedia;
+import business.negocio.NegociacaoRepository;
+import business.negocio.TipoDeMovimentacao;
 import persistence.CSVNegociacaoRepository;
 
 public class Metricas implements IMetricas {
 
     public NegociacaoMedia negociacaoMedia(String codigo) throws ArithmeticException {
         NegociacaoMedia compra = negociacaoMedia(codigo, TipoDeMovimentacao.COMPRA);
-        NegociacaoMedia venda = negociacaoMedia(codigo, TipoDeMovimentacao.COMPRA);
+        NegociacaoMedia venda = negociacaoMedia(codigo, TipoDeMovimentacao.VENDA);
 
         int quantidadeNegociada = (compra.getQuantidadeNegociada() - venda.getQuantidadeNegociada()); // referente ao
                                                                                                       // ativo e ao tipo
