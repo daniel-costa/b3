@@ -21,4 +21,7 @@ public class Main {
 
         sc.close();
     }
+    // FIXME organização do repositorio;
+    // FIXME Testes;
+    // FIXME Interface gráfica;
 }
