@@ -1,13 +1,13 @@
-package aplication;
+package main.java.aplication;
 
 import java.util.ArrayList;
 
-import business.negocio.IMetricas;
-import business.negocio.Negociacao;
-import business.negocio.NegociacaoMedia;
-import business.negocio.NegociacaoRepository;
-import business.negocio.TipoDeMovimentacao;
-import persistence.CSVNegociacaoRepository;
+import main.java.business.IMetricas;
+import main.java.business.Negociacao;
+import main.java.business.NegociacaoMedia;
+import main.java.business.NegociacaoRepository;
+import main.java.business.TipoDeMovimentacao;
+import main.java.persistence.CSVNegociacaoRepository;
 
 public class Metricas implements IMetricas {
 

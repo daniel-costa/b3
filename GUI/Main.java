@@ -3,9 +3,9 @@ package GUI;
 import java.util.Locale;
 import java.util.Scanner;
 
-import aplication.Metricas;
-import business.negocio.IMetricas;
-import business.negocio.NegociacaoMedia;
+import main.java.aplication.Metricas;
+import main.java.business.IMetricas;
+import main.java.business.NegociacaoMedia;
 
 public class Main {
     public static void main(String[] args) throws Exception {

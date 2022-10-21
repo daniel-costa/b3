@@ -1,4 +1,4 @@
-package business.negocio;
+package main.java.business;
 
 /* Negociação Média: é uma negociação simbólica que tem mesmo
 resultado prático que todas as outras negociações daquele ativo.

@@ -1,4 +1,4 @@
-package business.negocio;
+package main.java.business;
 
 public enum TipoDeMercado {
     MERCADO_A_VISTA,

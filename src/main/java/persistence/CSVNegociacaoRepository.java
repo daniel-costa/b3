@@ -1,4 +1,4 @@
-package persistence;
+package main.java.persistence;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,9 +8,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
-import business.negocio.Negociacao;
-import business.negocio.NegociacaoRepository;
-import business.negocio.TipoDeMovimentacao;
+import main.java.business.Negociacao;
+import main.java.business.NegociacaoRepository;
+import main.java.business.TipoDeMovimentacao;
 
 public class CSVNegociacaoRepository implements NegociacaoRepository {
     // FIXME System.getenv
