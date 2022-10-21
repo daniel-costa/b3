@@ -5,8 +5,8 @@
 Fornece o resumo das negociações feitas nos últimos 12 messes na bolsa de valores do Brasil.
 
 ## Projetos
-- [Core] (./projetos/core) realiza o processamento do resumo.
-- [Console](./projetos/cid-console) forneçe o resultado via linha de comandos.
+- [Core] (./projetos/resumo-core) realiza o processamento do resumo.
+- [Console](./projetos/resumo-console) forneçe o resultado via linha de comandos.
 
 ## Tech
 
