@@ -1,14 +1,12 @@
-package main.java.business;
+package com.github.daniel.resumob3.domain;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Negociacao {
-    private LocalDate dataDoNegocio;
+    private Date dataDoNegocio;
     private TipoDeMovimentacao tipoDeMovimentacao;
-    private String tipoDeMercado;
-    private LocalDate dataDeVencimento;
     private String corretora;
-    private String codigoDeNegociacao;
+    private String ativo;
     private int quantidadeNegociada;
     private double precoNegociado;
     private double valorTotalNegociado;
@@ -16,42 +14,31 @@ public class Negociacao {
     public Negociacao() {
     }
 
-    public Negociacao(String codigo) {
-    }
-
-    public Negociacao(TipoDeMovimentacao tipoDeMovimentacao, String codigoDeNogociacao) {
+    public Negociacao(TipoDeMovimentacao tipoDeMovimentacao, String ativo, int quantidadeNegociada, double precoNegociado, double valorTotalNegociado) {
         this.tipoDeMovimentacao = tipoDeMovimentacao;
-        this.codigoDeNegociacao = codigoDeNogociacao;
-    }
-
-    public Negociacao(TipoDeMovimentacao tipoDeMovimentacao, String codigoDeNogociacao, int quantidadeNegociada,
-            double precoNegociado, double valorTotalNegociado) {
-        this.tipoDeMovimentacao = tipoDeMovimentacao;
-        this.codigoDeNegociacao = codigoDeNogociacao;
+        this.ativo = ativo;
         this.quantidadeNegociada = quantidadeNegociada;
         this.precoNegociado = precoNegociado;
         this.valorTotalNegociado = valorTotalNegociado;
     }
 
-    public Negociacao(LocalDate dataDoNegocio, TipoDeMovimentacao tipoDeMovimentacao, String tipoDeMercado,
-            LocalDate dataDeVencimento, String corretora, String codigoDeNegociacao, int quantidadeNegociada,
-            double precoNegociado, double valorTotalNegociado) {
+    public Negociacao(Date dataDoNegocio, TipoDeMovimentacao tipoDeMovimentacao,
+                      String corretora, String ativo, int quantidadeNegociada,
+                      double precoNegociado, double valorTotalNegociado) {
         this.dataDoNegocio = dataDoNegocio;
         this.tipoDeMovimentacao = tipoDeMovimentacao;
-        this.tipoDeMercado = tipoDeMercado;
-        this.dataDeVencimento = dataDeVencimento;
         this.corretora = corretora;
-        this.codigoDeNegociacao = codigoDeNegociacao;
+        this.ativo = ativo;
         this.quantidadeNegociada = quantidadeNegociada;
         this.precoNegociado = precoNegociado;
         this.valorTotalNegociado = valorTotalNegociado;
     }
 
-    public LocalDate getDataDoNegocio() {
+    public Date getDataDoNegocio() {
         return dataDoNegocio;
     }
 
-    public void setDataDoNegocio(LocalDate dataDoNegocio) {
+    public void setDataDoNegocio(Date dataDoNegocio) {
         this.dataDoNegocio = dataDoNegocio;
     }
 
@@ -63,22 +50,6 @@ public class Negociacao {
         this.tipoDeMovimentacao = tipoDeMovimentacao;
     }
 
-    public String getTipoDeMercado() {
-        return tipoDeMercado;
-    }
-
-    public void setTipoDeMercado(String tipoDeMercado) {
-        this.tipoDeMercado = tipoDeMercado;
-    }
-
-    public LocalDate getDataDeVencimento() {
-        return dataDeVencimento;
-    }
-
-    public void setDataDeVencimento(LocalDate dataDeVencimento) {
-        this.dataDeVencimento = dataDeVencimento;
-    }
-
     public String getCorretora() {
         return corretora;
     }
@@ -87,12 +58,12 @@ public class Negociacao {
         this.corretora = corretora;
     }
 
-    public String getCodigoDeNegociacao() {
-        return codigoDeNegociacao;
+    public String getAtivo() {
+        return ativo;
     }
 
-    public void setCodigoDeNegociacao(String codigoDeNogociacao) {
-        this.codigoDeNegociacao = codigoDeNogociacao;
+    public void setAtivo(String ativo) {
+        this.ativo = ativo;
     }
 
     public int getQuantidadeNegociada() {
@@ -118,5 +89,4 @@ public class Negociacao {
     public void setValorTotalNegociado(double valorTotalNegociado) {
         this.valorTotalNegociado = valorTotalNegociado;
     }
-
 }
