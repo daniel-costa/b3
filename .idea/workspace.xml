@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffbfec85-78da-4661-a03c-6a57c87e1c82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/io/CSVResumoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/io/CSVResumoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/daniel/resumob3/io/CSVResumoRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/daniel/resumob3/io/CSVResumoRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,22 @@
       <recent name="com.github.daniel.resumoB3.persistence" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CSVResumoRepositoryTest.testandoEscrita">
+  <component name="RunManager" selected="JUnit.CSVResumoRepositoryTest">
+    <configuration name="CSVResumoRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="resumob3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.daniel.resumob3.io.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.daniel.resumob3.io" />
+      <option name="MAIN_CLASS_NAME" value="com.github.daniel.resumob3.io.CSVResumoRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CSVResumoRepositoryTest.saveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="resumob3" />
       <extension name="coverage">
@@ -156,22 +168,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.daniel.resumoB3.persistence" />
-      <option name="MAIN_CLASS_NAME" value="com.github.daniel.resumoB3.persistence.XLSXNegociacaoRepositoryTest" />
-      <option name="METHOD_NAME" value="todasNegociacoesQuantidade" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XLSXNegociacaoRepositoryTest.todasNegociacoesQuantidade" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="resumob3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.daniel.resumob3.io.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="com.github.daniel.resumob3.persistence" />
       <option name="MAIN_CLASS_NAME" value="com.github.daniel.resumob3.io.XLSXNegociacaoRepositoryTest" />
       <option name="METHOD_NAME" value="todasNegociacoesQuantidade" />
@@ -195,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CSVResumoRepositoryTest" />
         <item itemvalue="JUnit.CSVResumoRepositoryTest.testandoEscrita" />
         <item itemvalue="JUnit.XLSXNegociacaoRepositoryTest.todasNegociacoesQuantidade (1)" />
         <item itemvalue="JUnit.CSVResumoRepositoryTest.saveTest" />
         <item itemvalue="JUnit.XLSXNegociacaoRepositoryTest.experimento" />
-        <item itemvalue="JUnit.XLSXNegociacaoRepositoryTest.todasNegociacoesQuantidade" />
       </list>
     </recent_temporary>
   </component>
@@ -219,6 +215,10 @@
       <workItem from="1667593861450" duration="3237000" />
       <workItem from="1667597359227" duration="2015000" />
       <workItem from="1668175954666" duration="10713000" />
+      <workItem from="1668195150056" duration="4260000" />
+      <workItem from="1668623525875" duration="815000" />
+      <workItem from="1668708539672" duration="2611000" />
+      <workItem from="1669071809230" duration="101000" />
     </task>
     <servers />
   </component>
@@ -241,7 +241,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/io/CSVResumoRepository.java</url>
-          <line>16</line>
+          <line>15</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>

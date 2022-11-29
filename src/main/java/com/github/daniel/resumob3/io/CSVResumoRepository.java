@@ -14,6 +14,18 @@ public class CSVResumoRepository implements ResumoRepository {
 
     @Override
     public void save(Resumo resumo, OutputStream output) {
+
+        String formatoCSV = toCSV(resumo);
+        byte[] arquivoCSVByte = formatoCSV.getBytes();
+
+        try {
+            output.write(arquivoCSVByte);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String toCSV(Resumo resumo) {
         StringBuilder sb = new StringBuilder();
 
         sb.append("Tipo de Movimentação");
@@ -27,25 +39,21 @@ public class CSVResumoRepository implements ResumoRepository {
         sb.append("Valor Total Negociado");
         sb.append("\n");
 
-        for (Negociacao resumoNegociacoes : resumo.getResumoNegociacoes()) {
-            sb.append(resumoNegociacoes.getTipoDeMovimentacao()
+        for (Negociacao resumoNegociacao : resumo.getResumoNegociacoes()) {
+            sb.append(resumoNegociacao.getTipoDeMovimentacao()
                     .getTipoDeMovimentacao());
             sb.append(";");
-            sb.append(resumoNegociacoes.getAtivo());
+            sb.append(resumoNegociacao.getAtivo());
             sb.append(";");
-            sb.append("R$ " + df.format(resumoNegociacoes.getPrecoNegociado()));
+            sb.append("R$ " + df.format(resumoNegociacao.getPrecoNegociado()));
             sb.append(";");
-            sb.append(resumoNegociacoes.getQuantidadeNegociada());
+            sb.append(resumoNegociacao.getQuantidadeNegociada());
             sb.append(";");
-            sb.append("R$ " + df.format(resumoNegociacoes.getValorTotalNegociado()));
+            sb.append("R$ " + df.format(resumoNegociacao.getValorTotalNegociado()));
             sb.append("\n");
         }
-
-        byte[] arquivoCSVByte = sb.toString().getBytes();
-        try {
-            output.write(arquivoCSVByte);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        return sb.toString();
     }
+
+
 }
