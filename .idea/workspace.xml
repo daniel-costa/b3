@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffbfec85-78da-4661-a03c-6a57c87e1c82" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/io/CSVResumoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/io/CSVResumoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/daniel/resumob3/io/CSVResumoRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/daniel/resumob3/io/CSVResumoRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/application/console/Aplicacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/daniel/resumob3/io/CSVResumoRepositoryTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -29,6 +31,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2H2wxmVt7GnHb5GTHjgxyXhoEDC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -45,7 +54,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;org.junit.jupiter.api.Test&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/resumob3/src/test/java/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/resumob3&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -219,6 +228,13 @@
       <workItem from="1668623525875" duration="815000" />
       <workItem from="1668708539672" duration="2611000" />
       <workItem from="1669071809230" duration="101000" />
+      <workItem from="1670458965354" duration="528000" />
+      <workItem from="1670459502171" duration="4000" />
+      <workItem from="1670459525852" duration="49000" />
+      <workItem from="1670461884359" duration="1719000" />
+      <workItem from="1670520763273" duration="5071000" />
+      <workItem from="1670535710261" duration="2183000" />
+      <workItem from="1670588901489" duration="558000" />
     </task>
     <servers />
   </component>
