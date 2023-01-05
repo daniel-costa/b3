@@ -39,6 +39,7 @@ public class CSVResumoRepository implements ResumoRepository {
         sb.append("Valor Total Negociado");
         sb.append("\n");
 
+        double valorTotalNegociado = 0;
         for (Negociacao resumoNegociacao : resumo.getResumoNegociacoes()) {
             sb.append(resumoNegociacao.getTipoDeMovimentacao()
                     .getTipoDeMovimentacao());
@@ -51,9 +52,9 @@ public class CSVResumoRepository implements ResumoRepository {
             sb.append(";");
             sb.append("R$ " + df.format(resumoNegociacao.getValorTotalNegociado()));
             sb.append("\n");
+            valorTotalNegociado += resumoNegociacao.getValorTotalNegociado();
         }
+        sb.append("Valor Total Negociado: " + "R$ " + df.format(valorTotalNegociado));
         return sb.toString();
     }
-
-
 }

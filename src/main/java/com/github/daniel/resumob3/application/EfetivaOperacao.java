@@ -69,5 +69,8 @@ public class EfetivaOperacao extends Component {
 
         ResumoRepository resumoRepo = new CSVResumoRepository();
         resumoRepo.save(resumo, fileOutputStream);
+
+        System.out.println("Resumo gerado com sucesso!");
+        System.out.println("Arquivo salvo em: " + pathResumo);
     }
 }

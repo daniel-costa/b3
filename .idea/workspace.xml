@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffbfec85-78da-4661-a03c-6a57c87e1c82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/application/console/Aplicacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/daniel/resumob3/io/CSVResumoRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/application/EfetivaOperacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/application/EfetivaOperacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/io/CSVResumoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/daniel/resumob3/io/CSVResumoRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +233,7 @@
       <workItem from="1670520763273" duration="5071000" />
       <workItem from="1670535710261" duration="2183000" />
       <workItem from="1670588901489" duration="558000" />
+      <workItem from="1672955611993" duration="398000" />
     </task>
     <servers />
   </component>
