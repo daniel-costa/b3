@@ -11,14 +11,14 @@ uma interface gráfica, feito inteiramente na linguagem java, suportada pela fer
 
 Overview: o investidor faz o download, no formato para Execel, do relatório de todas suas negociações na [Área do investidor](https://www.investidor.b3.com.br/), lembrando de selecionar o período desejado. A aplicação é executada e o arquivo baixado é selecionado, ela retorna um arquivo com o resumo das negociações feitas.
 
+## Pré-requisitos
+
+- JDK e Maven instalados e configurados
+
 ## Iniciando
 
 - `git clone https://github.com/nogueiralegacy/resumob3`
 - cd `resumob3`
-
-## Pré-requisitos
-
-- JDK e Maven instalados e configurados
 
 ## Limpar, compilar e gerar o package
 
