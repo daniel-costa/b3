@@ -6,9 +6,9 @@ public class Main {
     }
 
     static int start() {
-        EfetivaOperacao efetiva = new EfetivaOperacao();
+        EfetivaResumoNegociacoes efetivaResumo = new EfetivaResumoNegociacoes();
 
-        efetiva.efetivaOperacao();
+        efetivaResumo.efetivaOperacao();
         return 0;
     }
 }

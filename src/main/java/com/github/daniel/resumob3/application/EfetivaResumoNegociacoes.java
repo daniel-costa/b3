@@ -12,10 +12,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
-public class EfetivaOperacao extends Component {
+public class EfetivaResumoNegociacoes extends Component {
     void efetivaOperacao(){
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Selecione o arquivo com as transações");
