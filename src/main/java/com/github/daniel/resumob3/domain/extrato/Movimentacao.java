@@ -7,6 +7,15 @@ public class Movimentacao {
     private String descricao;
     private double valor;
 
+    public Movimentacao() {
+    }
+
+    public Movimentacao(Date data, String descricao, double valor) {
+        this.data = data;
+        this.descricao = descricao;
+        this.valor = valor;
+    }
+    
     public Date getData() {
         return data;
     }
