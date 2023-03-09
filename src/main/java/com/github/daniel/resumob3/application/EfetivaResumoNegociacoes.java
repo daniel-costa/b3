@@ -4,8 +4,6 @@ import com.github.daniel.resumob3.domain.*;
 import com.github.daniel.resumob3.io.CSVResumoRepository;
 import com.github.daniel.resumob3.io.XLSXNegociacaoRepository;
 
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,26 +14,16 @@ import java.util.List;
 
 public class EfetivaResumoNegociacoes extends Component {
     void efetivaOperacao(){
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Selecione o arquivo com as transações");
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        ExploradorDeArquivosSwing explorador = new ExploradorDeArquivosSwing();
+        String titulo = "Selecione o arquivo com as negociações";
+        String descricao = "Arquivo XLSX";
+        String extensao = "xlsx";
+        File file = explorador.selecionarArquivo(titulo, descricao, extensao);
 
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos execel", "xlsx");
-        fileChooser.setFileFilter(filter);
-
-        int retorno = fileChooser.showOpenDialog(this);
-
-        File file;
-        if (retorno == JFileChooser.APPROVE_OPTION) {
-            file = fileChooser.getSelectedFile();
-        }
-        else {
-            return;
-        }
         String pathParent = file.getParent();
         String pathResumo = String.valueOf(Path.of( pathParent, "resumo.csv"));
 
-        FileOutputStream fileOutputStream = null;
+        FileOutputStream fileOutputStream;
 
         try {
             fileOutputStream = new FileOutputStream(pathResumo);
