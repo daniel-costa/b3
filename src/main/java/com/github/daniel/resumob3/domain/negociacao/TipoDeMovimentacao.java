@@ -1,4 +1,4 @@
-package com.github.daniel.resumob3.domain;
+package com.github.daniel.resumob3.domain.negociacao;
 
 public enum TipoDeMovimentacao {
     COMPRA("Compra"),

@@ -1,4 +1,4 @@
-package com.github.daniel.resumob3.domain;
+package com.github.daniel.resumob3.domain.negociacao;
 
 import java.util.ArrayList;
 import java.util.List;

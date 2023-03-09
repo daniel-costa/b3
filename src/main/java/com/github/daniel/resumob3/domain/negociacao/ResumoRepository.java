@@ -1,7 +1,6 @@
-package com.github.daniel.resumob3.domain;
+package com.github.daniel.resumob3.domain.negociacao;
 
 import java.io.OutputStream;
-import java.nio.file.Path;
 
 public interface ResumoRepository {
     /**

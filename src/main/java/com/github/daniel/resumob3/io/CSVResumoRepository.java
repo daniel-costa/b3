@@ -1,8 +1,8 @@
 package com.github.daniel.resumob3.io;
 
-import com.github.daniel.resumob3.domain.Negociacao;
-import com.github.daniel.resumob3.domain.Resumo;
-import com.github.daniel.resumob3.domain.ResumoRepository;
+import com.github.daniel.resumob3.domain.negociacao.Negociacao;
+import com.github.daniel.resumob3.domain.negociacao.Resumo;
+import com.github.daniel.resumob3.domain.negociacao.ResumoRepository;
 
 import java.io.IOException;
 import java.io.OutputStream;

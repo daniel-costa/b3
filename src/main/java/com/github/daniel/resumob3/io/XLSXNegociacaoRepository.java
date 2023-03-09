@@ -1,8 +1,8 @@
 package com.github.daniel.resumob3.io;
 
-import com.github.daniel.resumob3.domain.Negociacao;
-import com.github.daniel.resumob3.domain.NegociacaoRepository;
-import com.github.daniel.resumob3.domain.TipoDeMovimentacao;
+import com.github.daniel.resumob3.domain.negociacao.Negociacao;
+import com.github.daniel.resumob3.domain.negociacao.NegociacaoRepository;
+import com.github.daniel.resumob3.domain.negociacao.TipoDeMovimentacao;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;

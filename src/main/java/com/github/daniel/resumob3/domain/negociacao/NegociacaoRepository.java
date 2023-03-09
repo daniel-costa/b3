@@ -1,8 +1,6 @@
-package com.github.daniel.resumob3.domain;
+package com.github.daniel.resumob3.domain.negociacao;
 
 import java.io.InputStream;
-import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 public interface NegociacaoRepository {

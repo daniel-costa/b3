@@ -1,6 +1,6 @@
 package com.github.daniel.resumob3.application;
 
-import com.github.daniel.resumob3.domain.*;
+import com.github.daniel.resumob3.domain.negociacao.*;
 import com.github.daniel.resumob3.io.CSVResumoRepository;
 import com.github.daniel.resumob3.io.XLSXNegociacaoRepository;
 
